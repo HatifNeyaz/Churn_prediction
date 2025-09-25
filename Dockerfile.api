@@ -6,6 +6,10 @@ WORKDIR /app
 
 # Copy the requirements file into the container
 COPY requirements.txt .
+# Copy the rest of the application's code into the container
+COPY api.py .
+COPY churn_model.pth .
+COPY preprocessor.joblib .
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
